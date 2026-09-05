@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_registrar_vehiculo"
+        android:title="Registrar vehículo"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_registrar_cliente"
+        android:title="Registrar cliente"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_rentar_vehiculo"
+        android:title="Rentar vehículo"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_devolver_vehiculo"
+        android:title="Devolver vehículo"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_consultar_vehiculos"
+        android:title="Consultar vehículos"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_consultar_rentas"
+        android:title="Consultar rentas"
+        app:showAsAction="never" />
+
+</menu>

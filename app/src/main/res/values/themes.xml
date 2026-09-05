@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.Renta_de_autos_23300756" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#8E2A9E</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/BotonesRadio</item>
     </style>
-
+    <style name="BotonesRadio" parent="ShapeAppearance.Material3.Corner.None">
+        <item name="cornerSize">4dp</item>
+    </style>
     <style name="Theme.Renta_de_autos_23300756" parent="Base.Theme.Renta_de_autos_23300756" />
 </resources>

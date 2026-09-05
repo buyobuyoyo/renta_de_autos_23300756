@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">renta_de_autos_23300756</string>
+    <string name="app_name">Drivearound</string>
+    <!-- Marcas -->
+    <string-array name="marcas_array">
+        <item>Seleccionar marca...</item>
+        <item>Toyota</item>
+        <item>Suzuki</item>
+        <item>Nissan</item>
+        <item>Chevrolet</item>
+        <item>Honda</item>
+    </string-array>
+
+    <!-- Tipo -->
+    <string-array name="tipos_array">
+        <item>Seleccionar tipo...</item>
+        <item>Sedán</item>
+        <item>Pickup</item>
+        <item>SUV</item>
+        <item>Hatchback</item>
+    </string-array>
+
+    <!-- Disponibilidad -->
+    <string-array name="disponibilidad_array">
+        <item>Disponible</item>
+        <item>No disponible</item>
+    </string-array>
 </resources>
+

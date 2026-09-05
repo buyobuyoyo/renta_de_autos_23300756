@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+
+    <include
+        android:id="@+id/app_toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/app_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="28dp"
+            android:paddingVertical="24dp">
+
+
+            <TextView
+                android:id="@+id/tv_titulo_rentar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rentar un vehículo"
+                android:textSize="20sp"
+                android:textColor="#222222"
+                android:layout_marginBottom="28dp" />
+
+
+            <EditText
+                android:id="@+id/et_id_cliente_renta"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Identificación cliente (Número)"
+                android:inputType="number"
+                android:paddingHorizontal="12dp"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/sp_vehiculos_disponibles"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:paddingHorizontal="12dp" />
+
+            <EditText
+                android:id="@+id/et_dias_renta"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Número de días de renta"
+                android:inputType="number"
+                android:paddingHorizontal="12dp"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_fecha_renta"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="32dp"
+                android:hint="Fecha de renta (DD/MM/AAAA)"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none"
+                android:paddingHorizontal="12dp"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_confirmar_renta"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Rentar"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
