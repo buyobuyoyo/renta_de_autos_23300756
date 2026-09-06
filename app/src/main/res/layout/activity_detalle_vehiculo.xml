@@ -1,0 +1,97 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        app:cardElevation="15dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="500dp"
+            android:src="@drawable/img"
+            android:scaleType="centerCrop"
+            android:alpha="0.3"
+            android:contentDescription="Imagen de fondo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvPlaca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Placa"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvMarca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marca"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvModelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modelo"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvAno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Anio"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvCosto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Costo"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
+
+
+            <TextView
+                android:id="@+id/tvDisponible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disponible"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Volver"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center"
+                android:backgroundTint="?attr/colorPrimary"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

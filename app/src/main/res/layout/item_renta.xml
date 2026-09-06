@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="24dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="0dp"
+    app:strokeColor="#222222"
+    app:strokeWidth="1.5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvItemNombreVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Renta: "
+            android:textColor="#222222"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvItemPlaca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Placa: "
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvItemDias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Días: "
+            android:textColor="#444444"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tvItemCosto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Costo: "
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvItemCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Cliente: "
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvItemEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Estado: "
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
