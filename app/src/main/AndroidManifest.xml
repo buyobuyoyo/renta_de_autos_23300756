@@ -45,6 +45,10 @@
             android:name=".activity_detalle_vehiculo"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".activity_consultar_renta"
+            android:exported="false" />
     </application>
 
 </manifest>

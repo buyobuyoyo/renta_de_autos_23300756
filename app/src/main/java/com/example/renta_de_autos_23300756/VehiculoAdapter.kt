@@ -1,5 +1,6 @@
 package com.example.renta_de_autos_23300756
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,9 +27,14 @@ class VehiculoAdapter(private val listaVehiculos: List<Vehiculo>) :
 
         holder.tvNombre.text = "Vehículo: ${vehiculo.marca} ${vehiculo.modelo}"
         holder.tvPlaca.text = "Placa: ${vehiculo.placa}"
-
         val estadoTexto = if (vehiculo.isDisponible()) "Disponible" else "No disponible"
         holder.tvEstado.text = "Estado: $estadoTexto"
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, activity_detalle_vehiculo::class.java)
+            intent.putExtra("pos", position)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = listaVehiculos.size

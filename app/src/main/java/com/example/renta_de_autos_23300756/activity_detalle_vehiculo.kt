@@ -1,20 +1,29 @@
 package com.example.renta_de_autos_23300756
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class activity_detalle_vehiculo : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_detalle_vehiculo)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val pos = intent.getIntExtra("pos", -1)
+        if (pos != -1 && pos < listaVehiculo.size) {
+            val v = listaVehiculo[pos]
+            findViewById<TextView>(R.id.tvPlaca).text = "Placa: ${v.placa}"
+            findViewById<TextView>(R.id.tvMarca).text = "Marca: ${v.marca}"
+            findViewById<TextView>(R.id.tvModelo).text = "Modelo: ${v.modelo}"
+            findViewById<TextView>(R.id.tvAno).text = "Año: ${v.ano}"
+            findViewById<TextView>(R.id.tvCosto).text = "Costo por día: $${v.costo}"
+            findViewById<TextView>(R.id.tvDisponible).text = "Estado: ${if (v.isDisponible()) "Disponible" else "Rentado"}"
+        }
+
+        findViewById<Button>(R.id.btnVolver).setOnClickListener {
+            finish()
         }
     }
 }
