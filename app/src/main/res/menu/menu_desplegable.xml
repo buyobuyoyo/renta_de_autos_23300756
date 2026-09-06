@@ -3,6 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/action_pantalla_inicio"
+        android:title="Regresar al inicio"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_registrar_vehiculo"
         android:title="Registrar vehículo"
         app:showAsAction="never" />
