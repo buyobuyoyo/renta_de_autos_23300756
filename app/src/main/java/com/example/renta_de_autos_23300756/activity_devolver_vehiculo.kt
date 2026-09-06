@@ -28,7 +28,6 @@ class activity_devolver_vehiculo : AppCompatActivity() {
             val idRenta = etIdRenta.text.toString().trim()
             val placa = etPlaca.text.toString().trim()
 
-            // Buscar la renta activa por ID o por Placa
             val renta = listaRenta.find { it.activa && (it.idRenta == idRenta || it.vehiculo.placa.equals(placa, ignoreCase = true)) }
 
             if (renta != null) {

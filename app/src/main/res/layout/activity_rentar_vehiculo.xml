@@ -45,15 +45,12 @@
                 android:layout_marginBottom="28dp" />
 
 
-            <EditText
-                android:id="@+id/et_id_cliente_renta"
+            <Spinner
+                android:id="@+id/sp_cliente_renta"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginBottom="16dp"
-                android:hint="Identificación cliente (Número)"
-                android:inputType="number"
-                android:paddingHorizontal="12dp"
-                android:textSize="14sp" />
+                android:paddingHorizontal="12dp" />
 
             <Spinner
                 android:id="@+id/sp_vehiculos_disponibles"
@@ -73,16 +70,14 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/et_fecha_renta"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="32dp"
-                android:hint="Fecha de renta (DD/MM/AAAA)"
-                android:focusable="false"
-                android:clickable="true"
-                android:inputType="none"
-                android:paddingHorizontal="12dp"
-                android:textSize="14sp" />
+            android:id="@+id/et_fecha_renta"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="32dp"
+            android:hint="Fecha de renta (DD/MM/AAAA)"
+            android:inputType="date"
+            android:paddingHorizontal="12dp"
+            android:textSize="14sp" />
 
             <Button
                 android:id="@+id/btn_confirmar_renta"
