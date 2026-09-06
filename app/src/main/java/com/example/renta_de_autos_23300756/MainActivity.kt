@@ -12,21 +12,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Encuentra tu Toolbar incluida y establécela como ActionBar
+
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        // Oculta el título por defecto si ya pusiste tu propio TextView con "Carrazos"
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
-    // 1. Dibuja los 3 puntos y carga el menú
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_desplegable, menu)
         return true
     }
 
-    // 2. Escucha a cuál opción le dieron clic
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_registrar_vehiculo -> {

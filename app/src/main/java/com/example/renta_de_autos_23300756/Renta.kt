@@ -2,7 +2,7 @@ package com.example.renta_de_autos_23300756
 
 data class Renta(
     val idRenta: String,
-   /* val cliente: Cliente, */
+    val cliente: Cliente,
     val vehiculo: Vehiculo,
     var dias: Int,
     var activa: Boolean = true
