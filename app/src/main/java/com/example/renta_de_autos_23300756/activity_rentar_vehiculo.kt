@@ -11,10 +11,24 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeParseException
+import java.time.format.ResolverStyle
 
 class activity_rentar_vehiculo : AppCompatActivity() {
 
     private var vehiculosDisponibles: List<Vehiculo> = emptyList()
+
+    // Devuelve la fecha normalizada como DD/MM/AAAA, o null si no es una fecha real.
+    private fun normalizarFecha(texto: String): String? {
+        return try {
+            val entrada = DateTimeFormatter.ofPattern("d/M/uuuu").withResolverStyle(ResolverStyle.STRICT)
+            LocalDate.parse(texto, entrada).format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+        } catch (e: DateTimeParseException) {
+            null
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,8 +75,9 @@ class activity_rentar_vehiculo : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (fecha.isEmpty()) {
-                Toast.makeText(this, "Por favor ingrese la fecha de renta", Toast.LENGTH_SHORT).show()
+            val fechaValida = normalizarFecha(fecha)
+            if (fechaValida == null) {
+                Toast.makeText(this, "Ingrese una fecha válida con el formato DD/MM/AAAA", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -71,7 +86,7 @@ class activity_rentar_vehiculo : AppCompatActivity() {
             val vehiculoSeleccionado = vehiculosDisponibles[spVehiculos.selectedItemPosition]
             val nuevoIdRenta = (listaRenta.size + 1).toString()
 
-            val nuevaRenta = Renta(nuevoIdRenta, clienteSeleccionado, vehiculoSeleccionado, dias)
+            val nuevaRenta = Renta(nuevoIdRenta, clienteSeleccionado, vehiculoSeleccionado, dias, fechaValida)
             vehiculoSeleccionado.setDisponible(false)
             listaRenta.add(nuevaRenta)
 

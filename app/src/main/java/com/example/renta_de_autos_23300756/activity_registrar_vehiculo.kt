@@ -44,19 +44,37 @@ class activity_registrar_vehiculo : AppCompatActivity() {
         btnGuardar.setOnClickListener {
             val placa = etPlaca.text.toString().trim()
             val marca = spMarca.selectedItem.toString()
+            val tipo = spTipo.selectedItem.toString()
             val modelo = etModelo.text.toString().trim()
             val anio = etAnio.text.toString().toIntOrNull() ?: 0
             val costo = etCosto.text.toString().toDoubleOrNull() ?: 0.0
             val disponible = spDisponibilidad.selectedItemPosition == 0 // "Disponible"
 
-            if (placa.isNotEmpty() && modelo.isNotEmpty() && anio > 1900 && costo > 0.0 && spMarca.selectedItemPosition > 0) {
-                val nuevoVehiculo = Vehiculo(placa, marca, modelo, anio, costo, disponible)
-                listaVehiculo.add(nuevoVehiculo)
-                Toast.makeText(this, "Vehículo registrado con éxito", Toast.LENGTH_SHORT).show()
-                finish()
-            } else {
+            val datosCompletos = placa.isNotEmpty() && modelo.isNotEmpty() && anio > 1900 && costo > 0.0 &&
+                spMarca.selectedItemPosition > 0 && spTipo.selectedItemPosition > 0
+
+            if (!datosCompletos) {
                 Toast.makeText(this, "Por favor complete todos los datos correctamente", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            if (listaVehiculo.any { it.placa.equals(placa, ignoreCase = true) }) {
+                Toast.makeText(this, "Ya existe un vehículo registrado con esa placa", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val nuevoVehiculo = Vehiculo(
+                placa = placa,
+                marca = marca,
+                tipo = tipo,
+                modelo = modelo,
+                ano = anio,
+                costo = costo,
+                disponible = disponible
+            )
+            listaVehiculo.add(nuevoVehiculo)
+            Toast.makeText(this, "Vehículo registrado con éxito", Toast.LENGTH_SHORT).show()
+            finish()
         }
 
 

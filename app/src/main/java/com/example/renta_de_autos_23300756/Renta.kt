@@ -5,6 +5,7 @@ data class Renta(
     val cliente: Cliente,
     val vehiculo: Vehiculo,
     var dias: Int,
+    val fecha: String,
     var activa: Boolean = true
 ) {
     var costoTotal: Double = 0.0

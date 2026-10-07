@@ -31,6 +31,10 @@ class activity_registrar_cliente : AppCompatActivity() {
             val telefono = etTelefono.text.toString().trim()
 
             if (id.isNotEmpty() && nombreCompleto.isNotEmpty() && telefono.isNotEmpty()) {
+                if (listaCliente.any { it.identificacion == id }) {
+                    Toast.makeText(this, "Ya existe un cliente registrado con esa identificación", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
                 val cliente = Cliente(id, nombreCompleto, "", telefono)
                 listaCliente.add(cliente)
                 Toast.makeText(this, "Cliente registrado exitosamente", Toast.LENGTH_SHORT).show()

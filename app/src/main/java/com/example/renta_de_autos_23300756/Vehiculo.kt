@@ -3,6 +3,7 @@ package com.example.renta_de_autos_23300756
 data class Vehiculo(
     val placa: String,
     var marca: String,
+    var tipo: String,
     var modelo: String,
     var ano: Int,
     var costo: Double,

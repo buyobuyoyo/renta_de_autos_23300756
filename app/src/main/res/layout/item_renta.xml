@@ -43,6 +43,16 @@
             android:text="Días: "
             android:textColor="#444444"
             android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvItemFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Fecha de renta: "
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tvItemCosto"
             android:layout_width="wrap_content"

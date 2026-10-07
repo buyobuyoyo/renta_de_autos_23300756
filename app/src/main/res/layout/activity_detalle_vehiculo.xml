@@ -48,6 +48,14 @@
                 android:layout_marginBottom="8dp"/>
 
             <TextView
+                android:id="@+id/tvTipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo"
+                android:textSize="15sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
                 android:id="@+id/tvModelo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

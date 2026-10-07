@@ -16,6 +16,7 @@ class activity_detalle_vehiculo : AppCompatActivity() {
             val v = listaVehiculo[pos]
             findViewById<TextView>(R.id.tvPlaca).text = "Placa: ${v.placa}"
             findViewById<TextView>(R.id.tvMarca).text = "Marca: ${v.marca}"
+            findViewById<TextView>(R.id.tvTipo).text = "Tipo: ${v.tipo}"
             findViewById<TextView>(R.id.tvModelo).text = "Modelo: ${v.modelo}"
             findViewById<TextView>(R.id.tvAno).text = "Año: ${v.ano}"
             findViewById<TextView>(R.id.tvCosto).text = "Costo por día: $${v.costo}"

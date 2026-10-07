@@ -13,6 +13,7 @@ class RentaAdapter(private val listaRentas: List<Renta>) :
         val tvNombreVehiculo: TextView = itemView.findViewById(R.id.tvItemNombreVehiculo)
         val tvPlaca: TextView = itemView.findViewById(R.id.tvItemPlaca)
         val tvDias: TextView = itemView.findViewById(R.id.tvItemDias)
+        val tvFecha: TextView = itemView.findViewById(R.id.tvItemFecha)
         val tvCosto: TextView = itemView.findViewById(R.id.tvItemCosto)
         val tvCliente: TextView = itemView.findViewById(R.id.tvItemCliente)
         val tvEstado: TextView = itemView.findViewById(R.id.tvItemEstado)
@@ -30,7 +31,9 @@ class RentaAdapter(private val listaRentas: List<Renta>) :
         holder.tvNombreVehiculo.text = "Renta: #${renta.idRenta} - ${renta.vehiculo.marca} ${renta.vehiculo.modelo}"
         holder.tvPlaca.text = "Placa: ${renta.vehiculo.placa}"
         holder.tvDias.text = "Días: ${renta.dias}"
+        holder.tvFecha.text = "Fecha de renta: ${renta.fecha}"
         holder.tvCosto.text = "Costo: $${renta.costoTotal}"
+        holder.tvCliente.text = "Cliente: ${renta.cliente.nombre} (ID: ${renta.cliente.identificacion})"
         val estadoTexto = if (renta.activa) "Activa" else "Finalizada"
         holder.tvEstado.text = "Estado: $estadoTexto"
     }

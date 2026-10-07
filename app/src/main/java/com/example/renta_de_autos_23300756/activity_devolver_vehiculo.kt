@@ -21,14 +21,29 @@ class activity_devolver_vehiculo : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val etIdRenta = findViewById<EditText>(R.id.et_id_renta)
+        val etIdCliente = findViewById<EditText>(R.id.et_id_cliente_devolucion)
         val etPlaca = findViewById<EditText>(R.id.et_placa_devolucion)
         val btnDevolver = findViewById<Button>(R.id.btn_confirmar_devolucion)
 
         btnDevolver.setOnClickListener {
             val idRenta = etIdRenta.text.toString().trim()
+            val idCliente = etIdCliente.text.toString().trim()
             val placa = etPlaca.text.toString().trim()
 
-            val renta = listaRenta.find { it.activa && (it.idRenta == idRenta || it.vehiculo.placa.equals(placa, ignoreCase = true)) }
+            // Hace falta el número de renta o la placa para identificar una renta concreta
+            // (un mismo cliente puede tener varias rentas activas).
+            if (idRenta.isEmpty() && placa.isEmpty()) {
+                Toast.makeText(this, "Ingrese el número de renta o la placa del vehículo", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Todos los datos que se llenaron deben coincidir con la misma renta.
+            val renta = listaRenta.find {
+                it.activa &&
+                    (idRenta.isEmpty() || it.idRenta == idRenta) &&
+                    (idCliente.isEmpty() || it.cliente.identificacion == idCliente) &&
+                    (placa.isEmpty() || it.vehiculo.placa.equals(placa, ignoreCase = true))
+            }
 
             if (renta != null) {
                 renta.finalizarRenta()
@@ -40,7 +55,6 @@ class activity_devolver_vehiculo : AppCompatActivity() {
         }
     }
 
-    // 1. Esto es lo que "dibuja" (infla) el menú de los 3 puntitos en la barra:
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_desplegable, menu)
         return true
